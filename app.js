@@ -32,7 +32,11 @@ playerFormEl.addEventListener('submit', (e) => {
     const data = new FormData(playerFormEl);
     const userName = data.get('player-name');
 
-    playerInfoEl.textContent = `Your username is ${userName} and your HP is ${playerHp}`;
+    if (userName === '') {
+        playerInfoEl.textContent = `Your username is Username and your HP is ${playerHp}`;
+    } else {
+        playerInfoEl.textContent = `Your username is ${userName} and your HP is ${playerHp}`;
+    }
 });
 
 goblinFormEl.addEventListener('submit', (e) => {
@@ -62,15 +66,31 @@ function displayGoblins() {
 
         if (goblin.hp > 0) {
             goblinEl.addEventListener('click', () => {
-                console.log('you clicked a goblin');
+                if (Math.random() > 0.5) {
+                    goblin.hp--;
+                    alert(`Smack! ${goblin.name} oughta feel that one in the morning!`);
+                } else {
+                    alert(`You missed ${goblin.name}!`);
+                }
+                if (Math.random() > 0.7) {
+                    playerHp--;
+                    alert(`You got smacked by ${goblin.name}!`);
+                    console.log(playerHp);
+                }
+                if (goblin.hp === 0) {
+                    defeatedGoblins++;
+                    console.log(defeatedGoblins);
+                }
+                displayGoblins();
             });
         }
-
         goblinContainerEl.append(goblinEl);
+      }
+      
+      
     }
 
-}
-
+displayGoblins();
 // }
 // // iterate over the array and render and append new p tags for all the goblins in the array
 
