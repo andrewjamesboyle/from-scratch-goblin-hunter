@@ -18,3 +18,18 @@ export function renderGoblin(goblinInfo) {
 
     return goblinEl;
 }
+
+// export function renderPlayer(playerInfo) {
+//     const playerEl = document.createElement('div');
+//     const playerName = document.createElement('p');
+//     const playerHp = document.createElement('p');
+
+//     playerEl.classList.add('player');
+
+//     playerName.textContent = playerInfo.name;
+//     playerHp.textContent = playerInfo.hp;
+
+//     playerEl.append(playerName, playerHp);
+
+//     return playerEl;
+// }

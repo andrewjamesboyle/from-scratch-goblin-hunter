@@ -3,8 +3,10 @@ import { renderGoblin } from './render-utils.js';
 
 const playerFormEl = document.getElementById('player-form');
 const playerInfoEl = document.getElementById('player-info');
+const playerHpEl = document.getElementById('player-hp');
 const goblinFormEl = document.getElementById('goblin-form');
 const goblinContainerEl = document.getElementById('goblins-array-container');
+const defeatedGoblinsEl = document.getElementById('player-score');
 
 
 // let state
@@ -33,10 +35,12 @@ playerFormEl.addEventListener('submit', (e) => {
     const userName = data.get('player-name');
 
     if (userName === '') {
-        playerInfoEl.textContent = `Your username is Username and your HP is ${playerHp}`;
+        playerInfoEl.textContent = `Your username is Username. How original!`;
     } else {
-        playerInfoEl.textContent = `Your username is ${userName} and your HP is ${playerHp}`;
+        playerInfoEl.textContent = `Hello ${userName}.`;
     }
+
+    playerHpEl.textContent = `Your HP is ${playerHp}`;
 });
 
 goblinFormEl.addEventListener('submit', (e) => {
@@ -79,18 +83,25 @@ function displayGoblins() {
                 }
                 if (goblin.hp === 0) {
                     defeatedGoblins++;
-                    console.log(defeatedGoblins);
+                    alert(`R.I.P. ${goblin.name}!!!`);
                 }
+                playerHpEl.textContent = `Your HP is ${playerHp}`;
                 displayGoblins();
             });
         }
         goblinContainerEl.append(goblinEl);
-      }
-      
-      
     }
+    
+    defeatedGoblinsEl.textContent = `You have defeated ${defeatedGoblins} goblins! Keep up the good work!`;
+    
+}
 
 displayGoblins();
+
+// function displayPlayer() {
+//   playerInfoEl.textContent = '';
+//   const playerInfo = renderPlayer(newPlayer);
+// }
 // }
 // // iterate over the array and render and append new p tags for all the goblins in the array
 
