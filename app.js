@@ -7,7 +7,7 @@ const goblinFormEl = document.getElementById('goblin-form');
 const goblinContainerEl = document.getElementById('goblins-array-container');
 const defeatedGoblinsEl = document.getElementById('player-score');
 
-let playerHp = 1;
+let playerHp = 10;
 
 let goblinsArray = [
     {
