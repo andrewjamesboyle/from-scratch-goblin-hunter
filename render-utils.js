@@ -1,6 +1,6 @@
 export function renderGoblin(goblinInfo) {
     const goblinEl = document.createElement('div');
-    const faceEl = document.createElement('p');
+    const emojiEl = document.createElement('p');
     const nameEl = document.createElement('p');
     const hpEl = document.createElement('p');
 
@@ -8,28 +8,9 @@ export function renderGoblin(goblinInfo) {
 
     nameEl.textContent = goblinInfo.name;
     hpEl.textContent = goblinInfo.hp < 0 ? 0 : goblinInfo.hp;
-    faceEl.textContent = goblinInfo.hp > 0 ? '😈' : '🔥';
-
-    if (goblinInfo.hp < 0) {
-        goblinEl.classList.add('dead');
-    }
+    emojiEl.textContent = goblinInfo.hp > 0 ? '😈' : '🔥';
     
-    goblinEl.append(nameEl, faceEl, hpEl);
+    goblinEl.append(nameEl, emojiEl, hpEl);
 
     return goblinEl;
 }
-
-// export function renderPlayer(playerInfo) {
-//     const playerEl = document.createElement('div');
-//     const playerName = document.createElement('p');
-//     const playerHp = document.createElement('p');
-
-//     playerEl.classList.add('player');
-
-//     playerName.textContent = playerInfo.name;
-//     playerHp.textContent = playerInfo.hp;
-
-//     playerEl.append(playerName, playerHp);
-
-//     return playerEl;
-// }

@@ -10,7 +10,7 @@ const defeatedGoblinsEl = document.getElementById('player-score');
 
 
 // let state
-let playerHp = 10;
+let playerHp = 1;
 
 let goblinsArray = [
     {
@@ -26,7 +26,6 @@ let goblinsArray = [
 let defeatedGoblins = 0;
 
 displayGoblins();
-
 
 playerFormEl.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -68,7 +67,7 @@ function displayGoblins() {
     for (let goblin of goblinsArray) {
         const goblinEl = renderGoblin(goblin);
 
-        if (goblin.hp > 0) {
+        if (goblin.hp > 0 && playerHp > 0) {
             goblinEl.addEventListener('click', () => {
                 if (Math.random() > 0.5) {
                     goblin.hp--;
@@ -83,16 +82,18 @@ function displayGoblins() {
                 }
                 if (goblin.hp === 0) {
                     defeatedGoblins++;
-                    alert(`R.I.P. ${goblin.name}!!!`);
+                    alert(`You killed ${goblin.name}!!! Bye Felicia!`);
                 }
                 playerHpEl.textContent = `Your HP is ${playerHp}`;
                 displayGoblins();
             });
+        } else if (playerHp === 0) {
+            alert('You died! Hope it was worth it!! GAME OVER');
         }
         goblinContainerEl.append(goblinEl);
     }
     
-    defeatedGoblinsEl.textContent = `You have defeated ${defeatedGoblins} goblins! Keep up the good work!`;
+    defeatedGoblinsEl.textContent = `You have defeated ${defeatedGoblins} goblin(s)! Keep up the good work!`;
     
 }
 
