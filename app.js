@@ -1,4 +1,3 @@
-// import functions and grab DOM elements
 import { renderGoblin } from './render-utils.js';
 
 const playerFormEl = document.getElementById('player-form');
@@ -8,8 +7,6 @@ const goblinFormEl = document.getElementById('goblin-form');
 const goblinContainerEl = document.getElementById('goblins-array-container');
 const defeatedGoblinsEl = document.getElementById('player-score');
 
-
-// let state
 let playerHp = 1;
 
 let goblinsArray = [
@@ -87,30 +84,15 @@ function displayGoblins() {
                 playerHpEl.textContent = `Your HP is ${playerHp}`;
                 displayGoblins();
             });
-        } else if (playerHp === 0) {
-            alert('You died! Hope it was worth it!! GAME OVER');
-        }
+        } 
         goblinContainerEl.append(goblinEl);
     }
     
+    if (playerHp === 0) {
+        alert('You died! Hope it was worth it!! GAME OVER');
+    }
     defeatedGoblinsEl.textContent = `You have defeated ${defeatedGoblins} goblin(s)! Keep up the good work!`;
     
 }
 
 displayGoblins();
-
-// function displayPlayer() {
-//   playerInfoEl.textContent = '';
-//   const playerInfo = renderPlayer(newPlayer);
-// }
-// }
-// // iterate over the array and render and append new p tags for all the goblins in the array
-
-
-//   }
-// set textContent of each p tag to its corresponding state (i.e. goblinNameEl.textContent = goblin.name, and goblinHpEl.textContent = goblin.hp)
-// append all new goblin elements (goblinNameEl, goblinHpEl) inside of goblinContainerEl
-// return goblinContainerEl
-
-  // goblinContainerEl.append(various goblinElements);
-  // goblinContainerEl.textContent = `${goblinName} 😈 ${goblinHp}`
