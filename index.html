@@ -12,21 +12,54 @@
         href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&family=Titillium+Web:wght@200;400;600&display=swap">
     <link rel="stylesheet" href="/styles/reset.css" />
     <link rel="stylesheet" href="/styles/global.css" />
-    <title>Web App</title>
+    <title>🔥😈GOBLIN HUNTER😈🔥</title>
 </head>
 
 <body>
     <header>
-        <img src="/assets/html_css_js.png">
-        <h1>Web App</h1>
+        <h1>🔥😈GOBLIN HUNTER😈🔥</h1>
     </header>
-
+    
     <main>
+        <section id="player-and-goblins-area">
+            <section id="player-container">
+                <form id="player-form">
+                    <input placeholder="Input Player Name" name="player-name"/>
+                    <button>LET'S KILL SOME GOBLINS!</button>
+                </form>
+                <div id="player-info">
+                    <div id="player-name"></div>
+                </div>
+                <div id="player-image">
+                    <img src="./assets/cute-zelda.png" id="avatar-img" />
+                </div>
+            </section>
+            <section id="goblins-container">
+                <form id="goblin-form">
+                    <input placeholder="Input Goblin Name" name="goblin-name" />
+                    <button>CHALLENGE NEW GOBLIN</button>
+                </form>
+                <div id="goblins-array-container">
+                    Goblins Array Will Go Here
+                </div>
+            </section>
+        </section>
+        <section id="current-game-stats">
+            <div id="player-score">You have defeated 0 Goblins. Nice!</div>
+        </section>
 
+
+
+
+
+
+
+            </section>
+        </section>
     </main>
-
+    
     <footer>&copy;2022 Software Developer</footer>
-
+    
     <script type="module" src="app.js"></script>
 </body>
 
