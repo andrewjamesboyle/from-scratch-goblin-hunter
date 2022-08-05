@@ -43,6 +43,13 @@ header {
     align-items: flex-start;
 }
 
+#current-game-stats {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 main {
     padding: 20px;
 
