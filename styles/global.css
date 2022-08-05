@@ -9,7 +9,7 @@ body {
     font-family: 'Rubik', san-serif;
     background: var(--background);
     display: grid;
-    grid-template-rows: auto 1fr auto;
+    grid-template-rows: auto;
 }
 
 header {
@@ -24,8 +24,28 @@ header {
 
 }
 
+#player-and-goblins-area {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#player-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#player-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
 main {
     padding: 20px;
+
 }
 
 footer {
