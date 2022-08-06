@@ -75,7 +75,6 @@ function displayGoblins() {
                 if (Math.random() > 0.7) {
                     playerHp--;
                     alert(`You got smacked by ${goblin.name}!`);
-                    console.log(playerHp);
                 }
                 if (goblin.hp === 0) {
                     defeatedGoblins++;
