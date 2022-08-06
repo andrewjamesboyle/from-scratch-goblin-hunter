@@ -93,5 +93,3 @@ function displayGoblins() {
     defeatedGoblinsEl.textContent = `You have defeated ${defeatedGoblins} goblin(s)! Keep up the good work!`;
     
 }
-
-displayGoblins();
